@@ -11,7 +11,7 @@ var makeAssembly = false;
 var Executable = xdc.module('xdc.bld.Executable');
 
 var exeOpts = new Executable.Attrs({
-        cfgScript: '/Users/carlosvaellomartinez/workspace_v6_2/Tempus/Tempus.cfg',
+        cfgScript: 'C:/Users/Karl/workspace_v6_2/Tempus/Tempus.cfg',
         profile: 'release',
         cfgHome: 'configPkg',
 });
@@ -41,7 +41,7 @@ else {
 
 var thisObj = {
     cfg:        '../Tempus.cfg',
-    outputPath: '/Users/carlosvaellomartinez/workspace_v6_2/Tempus/Debug/configPkg',
+    outputPath: 'C:/Users/Karl/workspace_v6_2/Tempus/Debug/configPkg',
     exeName:    'Tempus' + suffix,
     exeIntName: 'Tempus' + suffix.replace('.', '_'),
     targ:       targ,

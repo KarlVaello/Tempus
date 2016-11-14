@@ -5,7 +5,9 @@
 #include <stdint.h>
 
 #include "ComandListData.h"
-
+#include <ti/drivers/GPIO.h>
+#include <ti/drivers/SPI.h>
+#include <ti/drivers/PIN.h>
 
 // some flags for initR() :(
 #define INITR_GREENTAB 0x0
@@ -83,11 +85,16 @@ volatile uint32_t *dataport;
 volatile uint32_t *clkport;
 volatile uint32_t *csport;
 volatile uint32_t *rsport;
-uint32_t _cs;
+
+
+#define _cs 19
+#define _dc  4
+#define _rst  1
+/*uint32_t _cs;
 uint32_t _rs;
 uint32_t _rst;
 uint32_t _sid;
-uint32_t _sclk;
+uint32_t _sclk;*/
 
 uint32_t datapinmask;
 uint32_t clkpinmask;
@@ -96,29 +103,21 @@ uint32_t rspinmask;
 uint32_t colstart; // some displays need this changed
 uint32_t rowstart; // some displays need this changed
 
-
-
-
-
+PIN_Handle _spiPinHandle;
 
 #define nElements(array) (sizeof(array) / sizeof(array[0]))
 
 class TempusDisplay{
 public:
 	TempusDisplay(void);
-	TempusDisplay(int8_t CS, int8_t RS, int8_t SID, int8_t SCLK, int8_t RST =
-			-1);
-	TempusDisplay(int8_t CS, int8_t RS, int8_t RST = -1);
 	~TempusDisplay(void);
 
-	uint32_t getCSpin();
-	void initB(void);                             // for ST7735B displays
-	void initR(uint8_t options); // for ST7735R
+	void tempusDisplaySetup(PIN_Handle spiPnHndl);
 	void initDisplay(uint8_t options);
 	void setAddrWindow(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1);
 	void drawPixel(int16_t x, int16_t y, uint16_t color);
 	//void uint16_t Color565(uint8_t r, uint8_t g, uint8_t b);
-
+	void closeSPI();
 private:
 	uint8_t tabcolor;
 
@@ -126,7 +125,6 @@ private:
 	void writecommand(uint8_t c);
 	void writedata(uint8_t d);
 	void commandList(ComandListData adrs[]);
-	void commonInit( ComandListData *cmdList);
 
 	uint8_t  spiread(void);
 

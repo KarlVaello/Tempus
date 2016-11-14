@@ -3,9 +3,6 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
-CFG_SRCS += \
-../Tempus.cfg 
-
 CPP_SRCS += \
 ../ComandListData.cpp \
 ../Tempus.cpp \
@@ -14,26 +11,12 @@ CPP_SRCS += \
 CMD_SRCS += \
 ../CC1350_LAUNCHXL.cmd 
 
+CFG_SRCS += \
+../Tempus.cfg 
+
 C_SRCS += \
 ../CC1350_LAUNCHXL.c \
 ../ccfg.c 
-
-GEN_CMDS += \
-./configPkg/linker.cmd 
-
-GEN_FILES += \
-./configPkg/linker.cmd \
-./configPkg/compiler.opt 
-
-GEN_MISC_DIRS += \
-./configPkg/ 
-
-C_DEPS += \
-./CC1350_LAUNCHXL.d \
-./ccfg.d 
-
-GEN_OPTS += \
-./configPkg/compiler.opt 
 
 OBJS += \
 ./CC1350_LAUNCHXL.obj \
@@ -47,19 +30,22 @@ CPP_DEPS += \
 ./Tempus.d \
 ./TempusDisplay.d 
 
-GEN_MISC_DIRS__QUOTED += \
-"configPkg/" 
+C_DEPS += \
+./CC1350_LAUNCHXL.d \
+./ccfg.d 
 
-OBJS__QUOTED += \
-"CC1350_LAUNCHXL.obj" \
-"ComandListData.obj" \
-"Tempus.obj" \
-"TempusDisplay.obj" \
-"ccfg.obj" 
+GEN_MISC_DIRS += \
+./configPkg/ 
 
-C_DEPS__QUOTED += \
-"CC1350_LAUNCHXL.d" \
-"ccfg.d" 
+GEN_CMDS += \
+./configPkg/linker.cmd 
+
+GEN_OPTS += \
+./configPkg/compiler.opt 
+
+GEN_FILES += \
+./configPkg/linker.cmd \
+./configPkg/compiler.opt 
 
 CPP_DEPS__QUOTED += \
 "ComandListData.d" \
@@ -67,8 +53,22 @@ CPP_DEPS__QUOTED += \
 "TempusDisplay.d" 
 
 GEN_FILES__QUOTED += \
-"configPkg/linker.cmd" \
-"configPkg/compiler.opt" 
+"configPkg\linker.cmd" \
+"configPkg\compiler.opt" 
+
+GEN_MISC_DIRS__QUOTED += \
+"configPkg\" 
+
+C_DEPS__QUOTED += \
+"CC1350_LAUNCHXL.d" \
+"ccfg.d" 
+
+OBJS__QUOTED += \
+"CC1350_LAUNCHXL.obj" \
+"ComandListData.obj" \
+"Tempus.obj" \
+"TempusDisplay.obj" \
+"ccfg.obj" 
 
 C_SRCS__QUOTED += \
 "../CC1350_LAUNCHXL.c" \
