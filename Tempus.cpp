@@ -16,13 +16,13 @@
 /* Board Header files */
 #include "Board.h"
 
-#include "TempusDisplay.h"
+#include "TFT_ILI9163C.h"
 
 #define TFT_CS  19  // Chip select line for TFT display
 #define TFT_DC   4 // Data/command line for TFT
 #define TFT_RST  1  // Reset line for TFT (or connect to +5V)
 
-TempusDisplay* tft = new TempusDisplay();
+TFT_ILI9163C* tft = new TFT_ILI9163C();
 
 bool inLoop = true;
 bool b = false;
@@ -67,7 +67,7 @@ Void taskFxn(UArg arg0, UArg arg1) {
 
 	//System_printf("Start Display Setup\n");
 
-	tft->initDisplay(INITR_REDTAB);
+	tft->begin();
 
 	//System_printf("End Display Setup\n");
 
@@ -77,7 +77,7 @@ Void taskFxn(UArg arg0, UArg arg1) {
 		for (int j = 0; j < 140;j++){
 			System_printf("i: %d ; j: %d\n", i, j);
 
-			tft->drawPixel(i, j, ST7735_BLACK);
+			tft->drawPixel(i, j, BLACK);
 
 		}
 	}
@@ -87,7 +87,6 @@ Void taskFxn(UArg arg0, UArg arg1) {
 	while (inLoop) {
 		loop();
 	}
-	tft->closeSPI();
 
 }
 

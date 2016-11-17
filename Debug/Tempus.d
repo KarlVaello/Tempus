@@ -181,8 +181,9 @@ Tempus.obj: C:/ti/tirex-content/tirtos_cc13xx_cc26xx_2_21_00_06/products/cc13xxw
 Tempus.obj: C:/ti/tirex-content/tirtos_cc13xx_cc26xx_2_21_00_06/products/cc13xxware_2_04_03_17272/driverlib/rom.h
 Tempus.obj: C:/ti/tirex-content/tirtos_cc13xx_cc26xx_2_21_00_06/products/cc13xxware_2_04_03_17272/driverlib/gpio.h
 Tempus.obj: C:/ti/tirex-content/tirtos_cc13xx_cc26xx_2_21_00_06/products/cc13xxware_2_04_03_17272/inc/hw_gpio.h
-Tempus.obj: ../TempusDisplay.h
-Tempus.obj: ../ComandListData.h
+Tempus.obj: ../TFT_ILI9163C.h
+Tempus.obj: ../_DisplaySettings/TFT_ILI9163C_settings.h
+Tempus.obj: ../_DisplaySettings/TFT_ILI9163C_registers.h
 
 ../Tempus.cpp: 
 C:/ti/xdctools_3_32_01_22_core/packages/xdc/std.h: 
@@ -365,5 +366,6 @@ C:/ti/tirex-content/tirtos_cc13xx_cc26xx_2_21_00_06/products/cc13xxware_2_04_03_
 C:/ti/tirex-content/tirtos_cc13xx_cc26xx_2_21_00_06/products/cc13xxware_2_04_03_17272/driverlib/rom.h: 
 C:/ti/tirex-content/tirtos_cc13xx_cc26xx_2_21_00_06/products/cc13xxware_2_04_03_17272/driverlib/gpio.h: 
 C:/ti/tirex-content/tirtos_cc13xx_cc26xx_2_21_00_06/products/cc13xxware_2_04_03_17272/inc/hw_gpio.h: 
-../TempusDisplay.h: 
-../ComandListData.h: 
+../TFT_ILI9163C.h: 
+../_DisplaySettings/TFT_ILI9163C_settings.h: 
+../_DisplaySettings/TFT_ILI9163C_registers.h: 

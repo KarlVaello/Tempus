@@ -12,6 +12,7 @@ GEN_CMDS__FLAG := -l"configPkg/linker.cmd"
 ORDERED_OBJS += \
 "./CC1350_LAUNCHXL.obj" \
 "./ComandListData.obj" \
+"./TFT_ILI9163C.obj" \
 "./Tempus.obj" \
 "./TempusDisplay.obj" \
 "./ccfg.obj" \
@@ -157,10 +158,10 @@ Tempus.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)$(GEN_FILES__QUOTED)$(BIN_OUTPUTS__QUOTED)$(GEN_OPTS__QUOTED)$(GEN_CMDS__QUOTED)
-	-$(RM) "ComandListData.d" "Tempus.d" "TempusDisplay.d" 
+	-$(RM) "ComandListData.d" "TFT_ILI9163C.d" "Tempus.d" "TempusDisplay.d" 
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
 	-$(RM) "CC1350_LAUNCHXL.d" "ccfg.d" 
-	-$(RM) "CC1350_LAUNCHXL.obj" "ComandListData.obj" "Tempus.obj" "TempusDisplay.obj" "ccfg.obj" 
+	-$(RM) "CC1350_LAUNCHXL.obj" "ComandListData.obj" "TFT_ILI9163C.obj" "Tempus.obj" "TempusDisplay.obj" "ccfg.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

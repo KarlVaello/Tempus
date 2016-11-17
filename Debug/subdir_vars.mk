@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../ComandListData.cpp \
+../TFT_ILI9163C.cpp \
 ../Tempus.cpp \
 ../TempusDisplay.cpp 
 
@@ -21,12 +22,14 @@ C_SRCS += \
 OBJS += \
 ./CC1350_LAUNCHXL.obj \
 ./ComandListData.obj \
+./TFT_ILI9163C.obj \
 ./Tempus.obj \
 ./TempusDisplay.obj \
 ./ccfg.obj 
 
 CPP_DEPS += \
 ./ComandListData.d \
+./TFT_ILI9163C.d \
 ./Tempus.d \
 ./TempusDisplay.d 
 
@@ -49,6 +52,7 @@ GEN_FILES += \
 
 CPP_DEPS__QUOTED += \
 "ComandListData.d" \
+"TFT_ILI9163C.d" \
 "Tempus.d" \
 "TempusDisplay.d" 
 
@@ -66,6 +70,7 @@ C_DEPS__QUOTED += \
 OBJS__QUOTED += \
 "CC1350_LAUNCHXL.obj" \
 "ComandListData.obj" \
+"TFT_ILI9163C.obj" \
 "Tempus.obj" \
 "TempusDisplay.obj" \
 "ccfg.obj" 
@@ -76,6 +81,7 @@ C_SRCS__QUOTED += \
 
 CPP_SRCS__QUOTED += \
 "../ComandListData.cpp" \
+"../TFT_ILI9163C.cpp" \
 "../Tempus.cpp" \
 "../TempusDisplay.cpp" 
 
