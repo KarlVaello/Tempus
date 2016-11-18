@@ -1,5 +1,5 @@
-#ifndef __TFT_ILI9163CLIB_H__
-#define __TFT_ILI9163CLIB_H__
+#ifndef _TFTILI9163CLIB_H_
+#define _TFTILI9163CLIB_H_
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -7,28 +7,13 @@
 #include <ti/drivers/SPI.h>
 #include <ti/drivers/PIN.h>
 
-#include "_DisplaySettings/TFT_ILI9163C_settings.h"
-
-#if !defined(_ADAFRUIT_GFX_VARIANT)
-	#ifdef __AVR__
-		#include <avr/pgmspace.h>
-	#elif defined(__SAM3X8E__)
-		#include <include/pio.h>
-		#define PROGMEM
-		#define pgm_read_byte(addr) (*(const unsigned char *)(addr))
-		#define pgm_read_word(addr) (*(const unsigned short *)(addr))
-		typedef unsigned char prog_uchar;
-	#endif
-#endif
+#include "_DisplaySettings/FTILI9163C_settings.h"
 
 
 //--------- Keep out hands from here!-------------
 
 #define	BLACK   		0x0000
 #define WHITE   		0xFFFF
-
-#include "_DisplaySettings/TFT_ILI9163C_registers.h"
-
 
 PIN_Handle _spiPinHandle;
 #define _cs 19

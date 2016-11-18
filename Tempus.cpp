@@ -12,11 +12,11 @@
 #include <ti/sysbios/knl/Task.h>
 #include <ti/drivers/GPIO.h>
 #include <ti/drivers/SPI.h>
+#include <TFTILI9163C.h>
 
 /* Board Header files */
 #include "Board.h"
 
-#include "TFT_ILI9163C.h"
 
 #define TFT_CS  19  // Chip select line for TFT display
 #define TFT_DC   4 // Data/command line for TFT

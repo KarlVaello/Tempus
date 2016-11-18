@@ -1,6 +1,4 @@
 
-#include "TFT_ILI9163C.h"
-
 #include <xdc/std.h>
 #include <xdc/runtime/System.h>
 
@@ -10,6 +8,7 @@
 #include <ti/drivers/GPIO.h>
 #include <ti/drivers/SPI.h>
 #include <ti/drivers/PIN.h>
+#include <TFTILI9163C.h>
 
 SPI_Handle spiHandle;
 SPI_Params spiParams;
